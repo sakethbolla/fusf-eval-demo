@@ -1,0 +1,89 @@
+{
+  "foundation": "Focused Ultrasound Foundation",
+  "mission": "Accelerating the development and adoption of non-invasive image-guided focused ultrasound to treat disease.",
+  "strategic_priorities": {
+    "mechanisms": [
+      "immunomodulation",
+      "neuromodulation",
+      "gene therapy",
+      "drug delivery",
+      "sonodynamic therapy"
+    ],
+    "neurodegenerative_diseases": [
+      "Alzheimer's disease",
+      "Parkinson's disease",
+      "Huntington's disease",
+      "ALS"
+    ],
+    "oncology": [
+      "glioblastoma",
+      "diffuse intrinsic pontine glioma (DIPG)",
+      "pancreatic cancer",
+      "breast cancer",
+      "metastatic cancer (immunotherapy emphasis)"
+    ],
+    "veterinary": "Companion animal applications also qualify."
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "name": "Letter of Intent (LOI)",
+      "purpose": "First-pass screen for fit. Foundation staff aim to review within two weeks.",
+      "criteria": [
+        {
+          "id": "mission_fit",
+          "name": "Mission Fit",
+          "description": "Does the proposed work use non-invasive image-guided focused ultrasound to treat disease? Projects that don't use FUS, use it diagnostically only, or target non-disease applications (e.g. cosmetic) score low.",
+          "scale": "1 (no fit) – 5 (clear, central use of FUS to treat disease)",
+          "weight": 0.5
+        },
+        {
+          "id": "strategic_alignment",
+          "name": "Strategic Priority Alignment",
+          "description": "Does the project target a priority disease (neurodegenerative, priority oncology, veterinary) or a priority mechanism (immunomodulation, neuromodulation, gene therapy, drug delivery, sonodynamic)? Strong fit hits both. Weak fit may use FUS but for an indication outside current priorities.",
+          "scale": "1 (off-priority) – 5 (multiple priority intersections)",
+          "weight": 0.5
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "name": "Full Proposal",
+      "purpose": "Detailed peer review of invited proposals.",
+      "criteria": [
+        {
+          "id": "scientific_merit",
+          "name": "Scientific Merit",
+          "description": "Is the science novel, hypothesis-driven, and grounded in prior literature? Does it advance the field?",
+          "scale": "1 (weak) – 5 (high impact, novel)",
+          "weight": 0.3
+        },
+        {
+          "id": "feasibility",
+          "name": "Feasibility",
+          "description": "Is the methodology sound and achievable within ~1 year and ~$100k for preclinical awards? Are required resources available?",
+          "scale": "1 (unlikely to complete) – 5 (clearly executable)",
+          "weight": 0.3
+        },
+        {
+          "id": "team",
+          "name": "Team",
+          "description": "Does the PI and team have demonstrated expertise in focused ultrasound and the target disease area?",
+          "scale": "1 (no relevant track record) – 5 (deep, multidisciplinary expertise)",
+          "weight": 0.2
+        },
+        {
+          "id": "eligibility",
+          "name": "Eligibility",
+          "description": "Does the project meet formal requirements (institution type, scope exclusions like large capital purchases or pure equipment development)?",
+          "scale": "1 (clearly ineligible) – 5 (clearly eligible)",
+          "weight": 0.2
+        }
+      ]
+    }
+  ],
+  "decision_thresholds": {
+    "FUND": "Stage 1 weighted score >= 3.5 AND no individual Stage 1 criterion below 2.",
+    "DECLINE": "Stage 1 weighted score < 3.5 OR any individual Stage 1 criterion below 2."
+  }
+}

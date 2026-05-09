@@ -1,0 +1,178 @@
+[
+  {
+    "loi_id": "LOI-001",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 5,
+        "rationale": "Uses focused ultrasound to treat disease \u2014 central mission match."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 5,
+        "rationale": "Multiple priority intersections (diseases=1, mechanisms=4)."
+      }
+    ],
+    "weighted_score": 5.0,
+    "decision": "FUND",
+    "decision_rationale": "Mission fit 5/5 + strategic alignment 5/5 clear FUSF profile.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 5, \"rationale\": \"Uses focused ultrasound to treat disease \\u2014 central mission match.\"}, {\"id\": \"strategic_alignment\", \"score\": 5, \"rationale\": \"Multiple priority intersections (diseases=1, mechanisms=4).\"}], \"weighted_score\": 5.0, \"decision\": \"FUND\", \"decision_rationale\": \"Mission fit 5/5 + strategic alignment 5/5 clear FUSF profile.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-002",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 5,
+        "rationale": "Uses focused ultrasound to treat disease \u2014 central mission match."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 4,
+        "rationale": "Two priority signals."
+      }
+    ],
+    "weighted_score": 4.5,
+    "decision": "FUND",
+    "decision_rationale": "Mission fit 5/5 + strategic alignment 4/5 clear FUSF profile.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 5, \"rationale\": \"Uses focused ultrasound to treat disease \\u2014 central mission match.\"}, {\"id\": \"strategic_alignment\", \"score\": 4, \"rationale\": \"Two priority signals.\"}], \"weighted_score\": 4.5, \"decision\": \"FUND\", \"decision_rationale\": \"Mission fit 5/5 + strategic alignment 4/5 clear FUSF profile.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-003",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 5,
+        "rationale": "Uses focused ultrasound to treat disease \u2014 central mission match."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 4,
+        "rationale": "Two priority signals."
+      }
+    ],
+    "weighted_score": 4.5,
+    "decision": "FUND",
+    "decision_rationale": "Mission fit 5/5 + strategic alignment 4/5 clear FUSF profile.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 5, \"rationale\": \"Uses focused ultrasound to treat disease \\u2014 central mission match.\"}, {\"id\": \"strategic_alignment\", \"score\": 4, \"rationale\": \"Two priority signals.\"}], \"weighted_score\": 4.5, \"decision\": \"FUND\", \"decision_rationale\": \"Mission fit 5/5 + strategic alignment 4/5 clear FUSF profile.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-004",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 1,
+        "rationale": "Uses ultrasound for cosmetic, not disease treatment."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 1,
+        "rationale": "No FUSF priority diseases or mechanisms named."
+      }
+    ],
+    "weighted_score": 1.0,
+    "decision": "DECLINE",
+    "decision_rationale": "Weighted 1.0 below 3.5 threshold or critical criterion below 2.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 1, \"rationale\": \"Uses ultrasound for cosmetic, not disease treatment.\"}, {\"id\": \"strategic_alignment\", \"score\": 1, \"rationale\": \"No FUSF priority diseases or mechanisms named.\"}], \"weighted_score\": 1.0, \"decision\": \"DECLINE\", \"decision_rationale\": \"Weighted 1.0 below 3.5 threshold or critical criterion below 2.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-005",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 1,
+        "rationale": "No focused ultrasound mechanism described."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 2,
+        "rationale": "One priority signal \u2014 partial alignment. (Downgraded: no FUS mechanism, so priority match is moot.)"
+      }
+    ],
+    "weighted_score": 1.5,
+    "decision": "DECLINE",
+    "decision_rationale": "Weighted 1.5 below 3.5 threshold or critical criterion below 2.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 1, \"rationale\": \"No focused ultrasound mechanism described.\"}, {\"id\": \"strategic_alignment\", \"score\": 2, \"rationale\": \"One priority signal \\u2014 partial alignment. (Downgraded: no FUS mechanism, so priority match is moot.)\"}], \"weighted_score\": 1.5, \"decision\": \"DECLINE\", \"decision_rationale\": \"Weighted 1.5 below 3.5 threshold or critical criterion below 2.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-006",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 3,
+        "rationale": "Uses FUS but disease-treatment intent is unclear."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 1,
+        "rationale": "No FUSF priority diseases or mechanisms named."
+      }
+    ],
+    "weighted_score": 2.0,
+    "decision": "DECLINE",
+    "decision_rationale": "Weighted 2.0 below 3.5 threshold or critical criterion below 2.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 3, \"rationale\": \"Uses FUS but disease-treatment intent is unclear.\"}, {\"id\": \"strategic_alignment\", \"score\": 1, \"rationale\": \"No FUSF priority diseases or mechanisms named.\"}], \"weighted_score\": 2.0, \"decision\": \"DECLINE\", \"decision_rationale\": \"Weighted 2.0 below 3.5 threshold or critical criterion below 2.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-007",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 5,
+        "rationale": "Uses focused ultrasound to treat disease \u2014 central mission match."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 1,
+        "rationale": "No FUSF priority diseases or mechanisms named."
+      }
+    ],
+    "weighted_score": 3.0,
+    "decision": "DECLINE",
+    "decision_rationale": "Weighted 3.0 below 3.5 threshold or critical criterion below 2.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 5, \"rationale\": \"Uses focused ultrasound to treat disease \\u2014 central mission match.\"}, {\"id\": \"strategic_alignment\", \"score\": 1, \"rationale\": \"No FUSF priority diseases or mechanisms named.\"}], \"weighted_score\": 3.0, \"decision\": \"DECLINE\", \"decision_rationale\": \"Weighted 3.0 below 3.5 threshold or critical criterion below 2.\"}",
+    "parse_error": null
+  },
+  {
+    "loi_id": "LOI-008",
+    "provider": "mock",
+    "model": "mock-lenient",
+    "criterion_scores": [
+      {
+        "id": "mission_fit",
+        "score": 1,
+        "rationale": "No focused ultrasound mechanism described."
+      },
+      {
+        "id": "strategic_alignment",
+        "score": 2,
+        "rationale": "Multiple priority intersections (diseases=2, mechanisms=1). (Downgraded: no FUS mechanism, so priority match is moot.)"
+      }
+    ],
+    "weighted_score": 1.5,
+    "decision": "DECLINE",
+    "decision_rationale": "Weighted 1.5 below 3.5 threshold or critical criterion below 2.",
+    "raw_response": "{\"criterion_scores\": [{\"id\": \"mission_fit\", \"score\": 1, \"rationale\": \"No focused ultrasound mechanism described.\"}, {\"id\": \"strategic_alignment\", \"score\": 2, \"rationale\": \"Multiple priority intersections (diseases=2, mechanisms=1). (Downgraded: no FUS mechanism, so priority match is moot.)\"}], \"weighted_score\": 1.5, \"decision\": \"DECLINE\", \"decision_rationale\": \"Weighted 1.5 below 3.5 threshold or critical criterion below 2.\"}",
+    "parse_error": null
+  }
+]
