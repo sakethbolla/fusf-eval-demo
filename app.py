@@ -1,6 +1,8 @@
 """Streamlit UI — single-page narrative of the FUSF LOI eval demo."""
 from __future__ import annotations
+import io
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -10,6 +12,18 @@ import streamlit as st
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 RESULTS = ROOT / "results"
+
+
+# ----- Secrets bridge -------------------------------------------------------
+# On Streamlit Cloud, API keys live in st.secrets. The eval code reads from
+# os.environ. Bridge them here so the same code works locally (.env) and
+# deployed (Streamlit secrets).
+for _k in ("GROQ_API_KEY", "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_API_KEY"):
+    try:
+        if _k in st.secrets and not os.environ.get(_k):
+            os.environ[_k] = st.secrets[_k]
+    except (FileNotFoundError, KeyError):
+        pass  # local dev: no secrets file, .env already loaded
 
 
 @st.cache_data
@@ -32,6 +46,43 @@ def load_results() -> dict[str, list[dict]]:
         model_id = f"{results[0]['provider']} / {results[0]['model']}"
         out[model_id] = results
     return out
+
+
+def render_score_table(per_model: dict[str, dict], include_truth_column: bool, truth_decision: str | None) -> None:
+    """Render the per-model criterion comparison as a single dataframe."""
+    rows: dict[str, dict[str, str]] = {
+        "mission_fit (score)": {},
+        "mission_fit (model's reasoning)": {},
+        "strategic_alignment (score)": {},
+        "strategic_alignment (model's reasoning)": {},
+        "Weighted score": {},
+        "Decision": {},
+    }
+    if include_truth_column:
+        rows["Matches ground truth?"] = {}
+
+    for model_id, r in per_model.items():
+        if not r:
+            for k in rows:
+                rows[k][model_id] = "—"
+            continue
+        scores = {c["id"]: c for c in r["criterion_scores"]} if isinstance(r.get("criterion_scores"), list) else {}
+        mf = scores.get("mission_fit", {"score": "?", "rationale": "—"})
+        sa = scores.get("strategic_alignment", {"score": "?", "rationale": "—"})
+        rows["mission_fit (score)"][model_id] = f"{mf['score']}/5"
+        rows["mission_fit (model's reasoning)"][model_id] = mf["rationale"]
+        rows["strategic_alignment (score)"][model_id] = f"{sa['score']}/5"
+        rows["strategic_alignment (model's reasoning)"][model_id] = sa["rationale"]
+        rows["Weighted score"][model_id] = str(r["weighted_score"])
+        rows["Decision"][model_id] = r["decision"]
+        if include_truth_column:
+            rows["Matches ground truth?"][model_id] = (
+                "✅ yes" if r["decision"] == truth_decision else "❌ no"
+            )
+
+    df = pd.DataFrame(rows).T
+    df.index.name = ""
+    st.dataframe(df, use_container_width=True)
 
 
 # ----- Setup ---------------------------------------------------------------
@@ -107,35 +158,11 @@ st.markdown(f"*Why:* {truth['rationale']}")
 st.divider()
 st.subheader("3. What each LLM said")
 
-table_rows: dict[str, dict[str, str]] = {
-    "mission_fit (score)": {},
-    "mission_fit (model's reasoning)": {},
-    "strategic_alignment (score)": {},
-    "strategic_alignment (model's reasoning)": {},
-    "Weighted score": {},
-    "Decision": {},
-    "Matches ground truth?": {},
+per_model_canned = {
+    model_id: results_index.get((model_id, loi["id"]))
+    for model_id in results_by_model
 }
-for model_id in results_by_model:
-    r = results_index.get((model_id, loi["id"]))
-    if not r:
-        for k in table_rows:
-            table_rows[k][model_id] = "—"
-        continue
-    scores = {c["id"]: c for c in r["criterion_scores"]}
-    mf = scores.get("mission_fit", {"score": "?", "rationale": "—"})
-    sa = scores.get("strategic_alignment", {"score": "?", "rationale": "—"})
-    table_rows["mission_fit (score)"][model_id] = f"{mf['score']}/5"
-    table_rows["mission_fit (model's reasoning)"][model_id] = mf["rationale"]
-    table_rows["strategic_alignment (score)"][model_id] = f"{sa['score']}/5"
-    table_rows["strategic_alignment (model's reasoning)"][model_id] = sa["rationale"]
-    table_rows["Weighted score"][model_id] = str(r["weighted_score"])
-    table_rows["Decision"][model_id] = r["decision"]
-    table_rows["Matches ground truth?"][model_id] = "✅ yes" if r["decision"] == truth["decision"] else "❌ no"
-
-df = pd.DataFrame(table_rows).T
-df.index.name = ""
-st.dataframe(df, use_container_width=True)
+render_score_table(per_model_canned, include_truth_column=True, truth_decision=truth["decision"])
 
 
 # ----- Step 4: disagreement (only if there is one) ------------------------
@@ -163,7 +190,7 @@ if disagreements:
                 "delivery mechanism is **lipid nanoparticles** — there is no "
                 "focused ultrasound in the project at all. But the model's "
                 "`mission_fit` reasoning above claims the project "
-                "*\"uses focused ultrasound as a delivery mechanism.\"* "
+                "*\"uses focused ultrasound for targeted immunomodulation.\"* "
                 "**The model hallucinated focused ultrasound into the project** "
                 "to justify its FUND decision. This is exactly the kind of "
                 "failure mode an evaluation harness is built to catch."
@@ -173,18 +200,101 @@ else:
     st.success("Both models agreed with the ground truth on this LOI.")
 
 
+# ----- Step 5: try it on any paper ----------------------------------------
+
+st.divider()
+st.subheader("5. Try it on any paper or abstract")
+st.caption(
+    "Upload a PDF or paste an abstract. Both models will score it live. "
+    "There's no ground truth column here — we don't know the right answer "
+    "for an arbitrary paper, so this is *model output only*."
+)
+
+
+def extract_pdf_text(file) -> str:
+    from pypdf import PdfReader
+    reader = PdfReader(io.BytesIO(file.getvalue()))
+    return "\n".join((p.extract_text() or "") for p in reader.pages)
+
+
+col_pdf, col_text = st.columns(2)
+with col_pdf:
+    uploaded = st.file_uploader("Upload a PDF", type=["pdf"], key="upload")
+with col_text:
+    pasted = st.text_area(
+        "...or paste an abstract",
+        height=180,
+        placeholder="Paste 1–3 paragraphs of an abstract or proposal text here.",
+    )
+
+submit = st.button(
+    "Run both models",
+    type="primary",
+    disabled=not (uploaded or pasted.strip()),
+)
+
+if submit:
+    text = ""
+    try:
+        if uploaded:
+            text = extract_pdf_text(uploaded)
+        else:
+            text = pasted
+    except Exception as e:
+        st.error(f"Could not read input: {e}")
+        text = ""
+
+    text = text.strip()[:3500]
+    if not text:
+        st.warning("No usable text extracted. Try pasting the abstract directly.")
+    else:
+        from eval import evaluate_loi, get_available_providers
+        providers = get_available_providers()
+        if not providers:
+            st.error(
+                "No API keys configured on the server. "
+                "On Streamlit Cloud, add `GROQ_API_KEY` and/or `OPENAI_API_KEY` "
+                "in **App settings → Secrets**, then refresh."
+            )
+        else:
+            user_loi = {
+                "id": "user-input",
+                "title": "User-submitted text",
+                "pi": "—",
+                "abstract": text,
+            }
+            live_results: dict[str, dict] = {}
+            for p in providers:
+                model_id = f"{p.name} / {p.model}"
+                with st.spinner(f"Scoring with {model_id}…"):
+                    res = evaluate_loi(user_loi, rubric, p)
+                    live_results[model_id] = res.to_dict()
+            st.session_state["live_results"] = live_results
+            st.session_state["live_text"] = text
+
+if "live_results" in st.session_state:
+    with st.expander("Text the models actually saw", expanded=False):
+        st.write(st.session_state["live_text"])
+    render_score_table(
+        st.session_state["live_results"],
+        include_truth_column=False,
+        truth_decision=None,
+    )
+
+
 # ----- Limitations ---------------------------------------------------------
 
 st.divider()
 st.subheader("Limitations of this demo")
 st.markdown(
     """
-- **Tiny dataset** — only 2 LOIs. Findings are directional, not statistical
+- **Tiny dataset** — only 2 LOIs in the canned comparison. Findings are directional, not statistical
 - **One LOI is synthetic** — LOI-008 was deliberately constructed to test a specific failure mode (priority keywords without focused ultrasound)
 - **Ground truth labels are mine** — written from FUSF's published criteria, not pulled from FUSF's actual past decisions. A production system would replay real historical reviews
 - **Stage 1 only** — the full proposal stage adds scientific merit, feasibility, team, and eligibility criteria, which need the actual proposal text
 - **Binary ground truth** — real reviewers disagree with each other; truth is a distribution, not a single label
 - **Two models only** — Llama 3.3 70B and GPT-4o-mini. A real evaluation would compare more, including frontier models like Claude and GPT-4o
+- **PDF text extraction is naive** — we pass the first ~3,500 characters as raw text. Real pipelines would parse out the abstract specifically, handle scanned PDFs with OCR, and validate the extraction
 """
 )
 

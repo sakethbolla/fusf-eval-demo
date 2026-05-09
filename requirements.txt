@@ -3,6 +3,7 @@ pandas>=2.0
 plotly>=5.18
 python-dotenv>=1.0
 pydantic>=2.5
+pypdf>=4.0
 
 # LLM providers — install whichever you have keys for; all are optional
 openai>=1.40
