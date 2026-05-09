@@ -8,7 +8,7 @@ FUSF receives Letters of Intent from researchers proposing focused-ultrasound st
 1. Does it fit the mission (non-invasive image-guided focused ultrasound to treat disease)?
 2. Does it align with current strategic priorities (specific diseases + mechanisms)?
 
-This demo runs a small batch of LOIs through multiple LLMs, compares each model's decision to a known ground truth, and surfaces where models agree, disagree, and fail.
+This demo runs a small batch of LOIs through multiple LLMs, compares each model's decision to the historical FUSF decision for that LOI, and surfaces where models agree, disagree, and fail.
 
 ## The pipeline
 
@@ -35,7 +35,7 @@ streamlit run app.py
 | Path | Purpose |
 |------|---------|
 | `data/rubric.json` | FUSF's evaluation criteria, encoded |
-| `data/lois.json` | Sample LOIs with ground-truth FUND/DECLINE labels |
+| `data/lois.json` | Sample LOIs with historical FUND/DECLINE decisions |
 | `eval/models.py` | Provider abstraction (Groq, Gemini, Claude, OpenAI, Mock) |
 | `eval/prompts.py` | Rubric → prompt template |
 | `eval/runner.py` | One LOI × one model → structured JSON eval |

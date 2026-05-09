@@ -65,7 +65,7 @@ if not results_by_model:
 # ----- Headline finding banner ---------------------------------------------
 
 # Compute agreement per model (used in banner + headline tab)
-truth_map = {l["id"]: l["ground_truth"]["decision"] for l in lois}
+truth_map = {l["id"]: l["historical_decision"]["decision"] for l in lois}
 agreement_rows = []
 disagreement_pairs: list[tuple[str, str]] = []  # (model_id, loi_id)
 for model_id, rs in results_by_model.items():
@@ -116,15 +116,15 @@ with tab_loi:
         loi_options = {f"{l['id']} — {l['title'][:80]}": l for l in lois}
         choice = st.selectbox("Pick an LOI", list(loi_options.keys()))
     loi = loi_options[choice]
-    truth = loi["ground_truth"]
+    truth = loi["historical_decision"]
     with col_tag:
         color = "🟢" if truth["decision"] == "FUND" else "🔴"
-        st.metric("Ground Truth", f"{color} {truth['decision']}")
+        st.metric("Historical Decision", f"{color} {truth['decision']}")
 
     st.markdown(f"**PI:** {loi.get('pi', '—')}")
     with st.expander("Abstract", expanded=False):
         st.write(loi["abstract"])
-    st.info(f"**Why this label:** {truth['rationale']}")
+    st.info(f"**Why FUSF decided this:** {truth['rationale']}")
 
     st.markdown("### Model evaluations")
     cols = st.columns(len(results_by_model))
@@ -150,22 +150,22 @@ with tab_loi:
 # ===== Tab 2: Headline Finding ==============================================
 
 with tab_finding:
-    st.markdown("### Per-model agreement with ground truth")
+    st.markdown("### Per-model agreement with historical decisions")
     st.dataframe(pd.DataFrame(agreement_rows), hide_index=True, use_container_width=True)
 
     st.markdown("### The single disagreement")
     if not disagreement_pairs:
-        st.success("No disagreements — every model matched ground truth on every LOI.")
+        st.success("No disagreements — every model matched the historical decision on every LOI.")
     else:
         for model_id, loi_id in disagreement_pairs:
             loi_obj = next(l for l in lois if l["id"] == loi_id)
             r = results_index[(model_id, loi_id)]
             st.markdown(
                 f"**{model_id}** funded **{loi_id}** ({loi_obj['title']}) — "
-                f"ground truth was DECLINE."
+                f"FUSF historically declined this."
             )
             st.markdown(f"> *Model's rationale:* {r['decision_rationale']}")
-            st.markdown(f"> *Why ground truth says DECLINE:* {loi_obj['ground_truth']['rationale']}")
+            st.markdown(f"> *Why FUSF declined:* {loi_obj['historical_decision']['rationale']}")
 
     st.markdown("### Failure mode: keyword-over-mission")
     st.markdown(

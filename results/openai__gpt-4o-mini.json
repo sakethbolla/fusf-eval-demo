@@ -7,7 +7,7 @@
       {
         "id": "mission_fit",
         "score": 4,
-        "rationale": "The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier to enhance immunotherapy delivery."
+        "rationale": "The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier for immunotherapy delivery."
       },
       {
         "id": "strategic_alignment",
@@ -17,8 +17,8 @@
     ],
     "weighted_score": 4.5,
     "decision": "FUND",
-    "decision_rationale": "The weighted score meets the threshold of 3.5, and no individual criterion is below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier to enhance immunotherapy delivery.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets glioblastoma, a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The weighted score meets the threshold of 3.5, and no individual criterion is below 2.\"\n}",
+    "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
+    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier for immunotherapy delivery.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets glioblastoma, a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
     "parse_error": null
   },
   {
