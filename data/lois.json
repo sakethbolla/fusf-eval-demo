@@ -10,73 +10,13 @@
     }
   },
   {
-    "id": "LOI-002",
-    "title": "Low-Intensity Focused Ultrasound Neuromodulation of the Subthalamic Nucleus for Treatment-Resistant Parkinson's Disease",
-    "pi": "Dr. Marcus Chen, Stanford University",
-    "abstract": "Deep brain stimulation (DBS) is effective for medication-refractory Parkinson's tremor but requires surgical electrode implantation, limiting eligibility. Low-intensity focused ultrasound (LIFU) can transiently and reversibly modulate neural activity through intact skull and scalp. We propose a first-in-human, single-arm safety study (n=12) of LIFU-mediated subthalamic nucleus neuromodulation in patients with treatment-resistant idiopathic Parkinson's. Primary endpoint: safety and tolerability over 30-day follow-up. Secondary endpoints: change in UPDRS-III motor score at 1 hour and 24 hours post-stimulation. Sham-controlled crossover within subjects. Stanford has a dedicated Insightec Exablate Neuro system and IRB-approved protocols for tremor thalamotomy. Co-investigators include a movement-disorders neurologist (15 years), a neurosurgeon (200+ DBS cases), and our institution's lead FUS physicist. Budget: $475,000 over 18 months — clinical award track.",
-    "ground_truth": {
-      "decision": "FUND",
-      "rationale": "Non-invasive image-guided FUS for Parkinson's (priority neurodegenerative disease) via neuromodulation (priority mechanism). Strong team, established institutional infrastructure, clear endpoints. Clinical award track."
-    }
-  },
-  {
-    "id": "LOI-003",
-    "title": "Focused Ultrasound-Mediated Sonodynamic Therapy for Locally Advanced Pancreatic Adenocarcinoma",
-    "pi": "Dr. Lena Okonkwo, MD Anderson Cancer Center",
-    "abstract": "Pancreatic ductal adenocarcinoma has a 5-year survival under 12%. Sonodynamic therapy (SDT) combines a sonosensitizer (5-aminolevulinic acid, 5-ALA) with focused ultrasound to generate localized reactive oxygen species in tumor tissue. We propose a 12-month preclinical study in orthotopic KPC mouse models. Aim 1: optimize 5-ALA dosing and FUS parameters for tumor-selective ROS generation (n=30). Aim 2: combine SDT with gemcitabine and measure progression-free survival vs. gemcitabine alone (n=48). Pilot human data to follow if endpoints met. PI is a surgical oncologist with two pancreatic-cancer-focused R01s; co-PI brings a decade of FUS sonodynamic expertise. Budget: $99,800.",
-    "ground_truth": {
-      "decision": "FUND",
-      "rationale": "FUS + sonodynamic therapy (priority mechanism) for pancreatic cancer (priority oncology). Realistic preclinical scope and budget; strong team."
-    }
-  },
-  {
-    "id": "LOI-004",
-    "title": "High-Intensity Focused Ultrasound for Non-Surgical Facial Skin Tightening and Wrinkle Reduction",
-    "pi": "Dr. Brent Halloway, Beverly Hills Aesthetic Institute",
-    "abstract": "We propose a randomized, sham-controlled study (n=80) of HIFU-based dermal collagen remodeling for moderate-to-severe nasolabial fold reduction. Primary endpoint: 6-month Wrinkle Severity Rating Scale change. The HIFU device (Ulthera) is FDA-cleared for cosmetic indications and we have ten years of clinical experience with it. Total budget: $310,000.",
-    "ground_truth": {
-      "decision": "DECLINE",
-      "rationale": "Cosmetic indication, not disease treatment. Fails core mission criterion despite using FUS. Classic anchoring trap — uses 'focused ultrasound' but outside FUSF's scope."
-    }
-  },
-  {
-    "id": "LOI-005",
-    "title": "Optogenetic Stimulation of Cortical Pyramidal Neurons in a Mouse Model of Alzheimer's Disease",
-    "pi": "Dr. Sara Williamson, MIT",
-    "abstract": "We propose to use channelrhodopsin-2 expression and 473nm laser stimulation to selectively activate pyramidal neurons in the entorhinal cortex of 5xFAD Alzheimer's model mice, characterizing downstream effects on plaque burden and memory consolidation. The PI is a leader in optogenetics with two prior NIH R01s. 18-month timeline, $310,000 budget.",
-    "ground_truth": {
-      "decision": "DECLINE",
-      "rationale": "Targets Alzheimer's (priority disease) with strong team — but uses no focused ultrasound at all. Fails mission core. Tests for prestige bias / topic-anchoring failure mode."
-    }
-  },
-  {
-    "id": "LOI-006",
-    "title": "MR-Guided Focused Ultrasound Thalamotomy for Essential Tremor — Practice Expansion Pilot",
-    "pi": "Dr. T. Reynolds, Regional Medical Center",
-    "abstract": "We want to start offering FUS thalamotomy at our community hospital. We have an Exablate Neuro and would like funding to support our first 20 cases.",
-    "ground_truth": {
-      "decision": "DECLINE",
-      "rationale": "FUS thalamotomy IS an FUSF-aligned modality, but this LOI is a clinical-service expansion, not research. No hypothesis, no novel science, no methodology, no team detail. Form-fail rather than fit-fail. Tests whether models distinguish topic match from project quality."
-    }
-  },
-  {
-    "id": "LOI-007",
-    "title": "Focused Ultrasound for Chronic Lower Back Pain Mediated by Lumbar Facet Joint Modulation",
-    "pi": "Dr. James Ortega, University of Pittsburgh",
-    "abstract": "Chronic lower back pain affects 20% of adults. We propose using focused ultrasound to thermally modulate lumbar facet joint nociceptors as a non-invasive alternative to radiofrequency ablation. Preclinical pig model (n=18). $96,000 budget. PI has 10 years of FUS experience.",
-    "ground_truth": {
-      "decision": "DECLINE",
-      "rationale": "Legitimate FUS use in disease treatment, but lower back pain is outside FUSF's stated strategic priorities. Borderline case — tests whether models hold the line on priority alignment when mission fit is fine."
-    }
-  },
-  {
     "id": "LOI-008",
     "title": "Lipid Nanoparticle-Encapsulated mRNA Delivery for HER2+ Breast Cancer Immunotherapy",
     "pi": "Dr. Yuki Tanaka, Memorial Sloan Kettering",
     "abstract": "We propose lipid nanoparticles carrying HER2-targeted mRNA vaccines to prime T-cell responses against HER2+ metastatic breast cancer. Established LNP platform from our lab's COVID vaccine work. Mouse 4T1 model, n=60. $99,000 budget, 12 months. Strong team with vaccine and oncology expertise.",
     "ground_truth": {
       "decision": "DECLINE",
-      "rationale": "Hits priority disease (breast cancer + immunotherapy emphasis) but uses no FUS at all. Tests whether models privilege disease/mechanism keywords over the actual mission core."
+      "rationale": "Hits priority disease (breast cancer + immunotherapy emphasis) but uses no focused ultrasound at all. Tests whether models privilege disease/mechanism keywords over the actual mission core: FUSF only funds projects using non-invasive image-guided focused ultrasound."
     }
   }
 ]

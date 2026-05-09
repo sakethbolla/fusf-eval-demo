@@ -215,12 +215,8 @@ def _strip_code_fences(text: str) -> str:
 # ----- Discovery ------------------------------------------------------------
 
 def get_available_providers() -> list[Provider]:
-    """Return every provider whose API key is set, plus two Mock flavors so
-    the multi-model comparison view always has at least two columns."""
-    providers: list[Provider] = [
-        MockProvider(name="mock", model="mock-lenient", flavor="lenient"),
-        MockProvider(name="mock", model="mock-strict", flavor="strict"),
-    ]
+    """Return every provider whose API key is set."""
+    providers: list[Provider] = []
     if os.environ.get("GROQ_API_KEY"):
         providers.append(GroqProvider())
     if os.environ.get("GOOGLE_API_KEY"):

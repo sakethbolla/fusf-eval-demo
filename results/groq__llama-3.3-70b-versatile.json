@@ -17,140 +17,8 @@
     ],
     "weighted_score": 5.0,
     "decision": "FUND",
-    "decision_rationale": "The weighted score of 5 exceeds the threshold of 3.5 and both individual criterion scores are above 2, meeting the decision rule for funding.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 5,\n       \"rationale\": \"The proposed work clearly uses non-invasive image-guided focused ultrasound to treat a disease, specifically recurrent glioblastoma, by opening the blood-brain barrier to deliver anti-PD-1 immunotherapy.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets a priority disease, glioblastoma, and utilizes a priority mechanism, immunomodulation, making it a strong fit for the foundation's strategic priorities.\"\n     }\n   ],\n   \"weighted_score\": 5,\n   \"decision\": \"FUND\",\n   \"decision_rationale\": \"The weighted score of 5 exceeds the threshold of 3.5 and both individual criterion scores are above 2, meeting the decision rule for funding.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-002",
-    "provider": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 5,
-        "rationale": "The proposed work clearly uses non-invasive image-guided focused ultrasound to treat a disease, specifically Parkinson's disease, by modulating neural activity in the subthalamic nucleus."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "The project targets a priority disease, Parkinson's disease, and utilizes a priority mechanism, neuromodulation, making it a strong fit for the foundation's strategic priorities."
-      }
-    ],
-    "weighted_score": 5.0,
-    "decision": "FUND",
     "decision_rationale": "The weighted score of 5.0 exceeds the threshold of 3.5, and both individual criterion scores are above 2, meeting the decision rule for funding.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 5,\n       \"rationale\": \"The proposed work clearly uses non-invasive image-guided focused ultrasound to treat a disease, specifically Parkinson's disease, by modulating neural activity in the subthalamic nucleus.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets a priority disease, Parkinson's disease, and utilizes a priority mechanism, neuromodulation, making it a strong fit for the foundation's strategic priorities.\"\n     }\n   ],\n   \"weighted_score\": 5.0,\n   \"decision\": \"FUND\",\n   \"decision_rationale\": \"The weighted score of 5.0 exceeds the threshold of 3.5, and both individual criterion scores are above 2, meeting the decision rule for funding.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-003",
-    "provider": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 5,
-        "rationale": "The proposed work clearly uses non-invasive image-guided focused ultrasound to treat disease, specifically pancreatic adenocarcinoma, through sonodynamic therapy."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "The project targets a priority disease, pancreatic cancer, and utilizes a priority mechanism, sonodynamic therapy, demonstrating strong alignment with the foundation's strategic priorities."
-      }
-    ],
-    "weighted_score": 5.0,
-    "decision": "FUND",
-    "decision_rationale": "The weighted score of 5.0 exceeds the threshold of 3.5, and both individual criterion scores are above 2, meeting the decision rule for funding.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 5,\n       \"rationale\": \"The proposed work clearly uses non-invasive image-guided focused ultrasound to treat disease, specifically pancreatic adenocarcinoma, through sonodynamic therapy.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets a priority disease, pancreatic cancer, and utilizes a priority mechanism, sonodynamic therapy, demonstrating strong alignment with the foundation's strategic priorities.\"\n     }\n   ],\n   \"weighted_score\": 5.0,\n   \"decision\": \"FUND\",\n   \"decision_rationale\": \"The weighted score of 5.0 exceeds the threshold of 3.5, and both individual criterion scores are above 2, meeting the decision rule for funding.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-004",
-    "provider": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 1,
-        "rationale": "The proposed work uses focused ultrasound for cosmetic indications, such as facial skin tightening and wrinkle reduction, rather than treating a disease."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 1,
-        "rationale": "The project targets a non-priority indication, specifically cosmetic skin tightening and wrinkle reduction, which does not align with the foundation's strategic priorities."
-      }
-    ],
-    "weighted_score": 1.0,
-    "decision": "DECLINE",
-    "decision_rationale": "The weighted score is below the threshold of 3.5 and both individual criteria scores are below 2, indicating a poor fit with the foundation's mission and strategic priorities.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 1,\n       \"rationale\": \"The proposed work uses focused ultrasound for cosmetic indications, such as facial skin tightening and wrinkle reduction, rather than treating a disease.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 1,\n       \"rationale\": \"The project targets a non-priority indication, specifically cosmetic skin tightening and wrinkle reduction, which does not align with the foundation's strategic priorities.\"\n     }\n   ],\n   \"weighted_score\": 1,\n   \"decision\": \"DECLINE\",\n   \"decision_rationale\": \"The weighted score is below the threshold of 3.5 and both individual criteria scores are below 2, indicating a poor fit with the foundation's mission and strategic priorities.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-005",
-    "provider": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 1,
-        "rationale": "The proposed work does not use non-invasive image-guided focused ultrasound to treat disease, instead using optogenetic stimulation."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "The project targets Alzheimer's disease, a priority neurodegenerative disease."
-      }
-    ],
-    "weighted_score": 3.0,
-    "decision": "DECLINE",
-    "decision_rationale": "The mission_fit score is below 2, which is a requirement for funding.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 1,\n       \"rationale\": \"The proposed work does not use non-invasive image-guided focused ultrasound to treat disease, instead using optogenetic stimulation.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets Alzheimer's disease, a priority neurodegenerative disease.\"\n     }\n   ],\n   \"weighted_score\": 3,\n   \"decision\": \"DECLINE\",\n   \"decision_rationale\": \"The mission_fit score is below 2, which is a requirement for funding.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-006",
-    "provider": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 5,
-        "rationale": "The proposed work clearly uses non-invasive image-guided focused ultrasound to treat essential tremor, a disease."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 4,
-        "rationale": "The project targets essential tremor, which is not explicitly listed as a priority disease, but it does use neuromodulation, a priority mechanism."
-      }
-    ],
-    "weighted_score": 4.5,
-    "decision": "FUND",
-    "decision_rationale": "The weighted score of 4.5 is greater than or equal to 3.5, and neither criterion score is below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 5,\n       \"rationale\": \"The proposed work clearly uses non-invasive image-guided focused ultrasound to treat essential tremor, a disease.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 4,\n       \"rationale\": \"The project targets essential tremor, which is not explicitly listed as a priority disease, but it does use neuromodulation, a priority mechanism.\"\n     }\n   ],\n   \"weighted_score\": 4.5,\n   \"decision\": \"FUND\",\n   \"decision_rationale\": \"The weighted score of 4.5 is greater than or equal to 3.5, and neither criterion score is below 2.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-007",
-    "provider": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 5,
-        "rationale": "The proposed work clearly uses non-invasive image-guided focused ultrasound to treat a disease, specifically chronic lower back pain, by thermally modulating lumbar facet joint nociceptors."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 1,
-        "rationale": "The project does not target a priority disease or mechanism as outlined in the foundation's strategic priorities, instead focusing on chronic lower back pain."
-      }
-    ],
-    "weighted_score": 3.0,
-    "decision": "DECLINE",
-    "decision_rationale": "The weighted score is below the threshold of 3.5, and the strategic_alignment score is below 2, leading to a decline decision.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 5,\n       \"rationale\": \"The proposed work clearly uses non-invasive image-guided focused ultrasound to treat a disease, specifically chronic lower back pain, by thermally modulating lumbar facet joint nociceptors.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 1,\n       \"rationale\": \"The project does not target a priority disease or mechanism as outlined in the foundation's strategic priorities, instead focusing on chronic lower back pain.\"\n     }\n   ],\n   \"weighted_score\": 3,\n   \"decision\": \"DECLINE\",\n   \"decision_rationale\": \"The weighted score is below the threshold of 3.5, and the strategic_alignment score is below 2, leading to a decline decision.\"\n}",
+    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 5,\n       \"rationale\": \"The proposed work clearly uses non-invasive image-guided focused ultrasound to treat a disease, specifically recurrent glioblastoma, by opening the blood-brain barrier to deliver anti-PD-1 immunotherapy.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets a priority disease, glioblastoma, and utilizes a priority mechanism, immunomodulation, making it a strong fit for the foundation's strategic priorities.\"\n     }\n   ],\n   \"weighted_score\": 5.0,\n   \"decision\": \"FUND\",\n   \"decision_rationale\": \"The weighted score of 5.0 exceeds the threshold of 3.5, and both individual criterion scores are above 2, meeting the decision rule for funding.\"\n}",
     "parse_error": null
   },
   {
@@ -161,7 +29,7 @@
       {
         "id": "mission_fit",
         "score": 1,
-        "rationale": "The proposed work does not use non-invasive image-guided focused ultrasound to treat disease, instead focusing on lipid nanoparticles for mRNA vaccine delivery."
+        "rationale": "The proposed work does not use non-invasive image-guided focused ultrasound to treat disease, instead focusing on lipid nanoparticles for mRNA delivery."
       },
       {
         "id": "strategic_alignment",
@@ -172,7 +40,7 @@
     "weighted_score": 3.0,
     "decision": "DECLINE",
     "decision_rationale": "The weighted score is below the threshold of 3.5 and the mission_fit criterion score is below 2, leading to a decline decision.",
-    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 1,\n       \"rationale\": \"The proposed work does not use non-invasive image-guided focused ultrasound to treat disease, instead focusing on lipid nanoparticles for mRNA vaccine delivery.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets a priority disease, HER2+ breast cancer, which is a listed oncology priority, and also involves immunomodulation, a priority mechanism.\"\n     }\n   ],\n   \"weighted_score\": 3,\n   \"decision\": \"DECLINE\",\n   \"decision_rationale\": \"The weighted score is below the threshold of 3.5 and the mission_fit criterion score is below 2, leading to a decline decision.\"\n}",
+    "raw_response": "{\n  \"criterion_scores\": [\n     {\n       \"id\": \"mission_fit\",\n       \"score\": 1,\n       \"rationale\": \"The proposed work does not use non-invasive image-guided focused ultrasound to treat disease, instead focusing on lipid nanoparticles for mRNA delivery.\"\n     },\n     {\n       \"id\": \"strategic_alignment\",\n       \"score\": 5,\n       \"rationale\": \"The project targets a priority disease, HER2+ breast cancer, which is a listed oncology priority, and also involves immunomodulation, a priority mechanism.\"\n     }\n   ],\n   \"weighted_score\": 3,\n   \"decision\": \"DECLINE\",\n   \"decision_rationale\": \"The weighted score is below the threshold of 3.5 and the mission_fit criterion score is below 2, leading to a decline decision.\"\n}",
     "parse_error": null
   }
 ]

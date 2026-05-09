@@ -12,145 +12,13 @@
       {
         "id": "strategic_alignment",
         "score": 5,
-        "rationale": "The project targets glioblastoma, which is a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy."
+        "rationale": "The project targets glioblastoma, a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy."
       }
     ],
     "weighted_score": 4.5,
     "decision": "FUND",
-    "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier to enhance immunotherapy delivery.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets glioblastoma, which is a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-002",
-    "provider": "openai",
-    "model": "gpt-4o-mini",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 4,
-        "rationale": "The project uses low-intensity focused ultrasound to modulate neural activity, which aligns with the mission of treating disease."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "The project targets treatment-resistant Parkinson's disease, a priority neurodegenerative disease, and employs a priority mechanism of neuromodulation."
-      }
-    ],
-    "weighted_score": 4.5,
-    "decision": "FUND",
-    "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses low-intensity focused ultrasound to modulate neural activity, which aligns with the mission of treating disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets treatment-resistant Parkinson's disease, a priority neurodegenerative disease, and employs a priority mechanism of neuromodulation.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-003",
-    "provider": "openai",
-    "model": "gpt-4o-mini",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 4,
-        "rationale": "The project uses focused ultrasound in combination with sonodynamic therapy to treat pancreatic cancer, demonstrating a clear application of FUS to treat disease."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "The project targets pancreatic cancer, which is a priority oncology disease, and employs a priority mechanism of sonodynamic therapy."
-      }
-    ],
-    "weighted_score": 4.5,
-    "decision": "FUND",
-    "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses focused ultrasound in combination with sonodynamic therapy to treat pancreatic cancer, demonstrating a clear application of FUS to treat disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets pancreatic cancer, which is a priority oncology disease, and employs a priority mechanism of sonodynamic therapy.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-004",
-    "provider": "openai",
-    "model": "gpt-4o-mini",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 1,
-        "rationale": "The proposed work uses focused ultrasound for cosmetic applications, which do not align with the mission of treating disease."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 1,
-        "rationale": "The project targets a cosmetic indication, which is outside the strategic priorities of neurodegenerative diseases, oncology, or veterinary applications."
-      }
-    ],
-    "weighted_score": 1.0,
-    "decision": "DECLINE",
-    "decision_rationale": "The project does not meet the minimum criteria for funding, with both scores below the required threshold.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 1,\n      \"rationale\": \"The proposed work uses focused ultrasound for cosmetic applications, which do not align with the mission of treating disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 1,\n      \"rationale\": \"The project targets a cosmetic indication, which is outside the strategic priorities of neurodegenerative diseases, oncology, or veterinary applications.\"\n    }\n  ],\n  \"weighted_score\": 1.0,\n  \"decision\": \"DECLINE\",\n  \"decision_rationale\": \"The project does not meet the minimum criteria for funding, with both scores below the required threshold.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-005",
-    "provider": "openai",
-    "model": "gpt-4o-mini",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 1,
-        "rationale": "The project does not use focused ultrasound; it focuses on optogenetic stimulation."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 4,
-        "rationale": "The project targets Alzheimer's disease, a priority neurodegenerative disease, but does not use focused ultrasound."
-      }
-    ],
-    "weighted_score": 2.5,
-    "decision": "DECLINE",
-    "decision_rationale": "The weighted score is below 3.5 and the mission fit score is below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 1,\n      \"rationale\": \"The project does not use focused ultrasound; it focuses on optogenetic stimulation.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 4,\n      \"rationale\": \"The project targets Alzheimer's disease, a priority neurodegenerative disease, but does not use focused ultrasound.\"\n    }\n  ],\n  \"weighted_score\": 2.5,\n  \"decision\": \"DECLINE\",\n  \"decision_rationale\": \"The weighted score is below 3.5 and the mission fit score is below 2.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-006",
-    "provider": "openai",
-    "model": "gpt-4o-mini",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 4,
-        "rationale": "The project uses non-invasive image-guided focused ultrasound to treat essential tremor, which aligns well with the foundation's mission."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "Essential tremor is a neurological condition, and the project utilizes focused ultrasound, which intersects with both priority disease and mechanism."
-      }
-    ],
-    "weighted_score": 4.5,
-    "decision": "FUND",
-    "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses non-invasive image-guided focused ultrasound to treat essential tremor, which aligns well with the foundation's mission.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"Essential tremor is a neurological condition, and the project utilizes focused ultrasound, which intersects with both priority disease and mechanism.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
-    "parse_error": null
-  },
-  {
-    "loi_id": "LOI-007",
-    "provider": "openai",
-    "model": "gpt-4o-mini",
-    "criterion_scores": [
-      {
-        "id": "mission_fit",
-        "score": 4,
-        "rationale": "The project uses focused ultrasound to treat chronic lower back pain, which aligns well with the foundation's mission."
-      },
-      {
-        "id": "strategic_alignment",
-        "score": 5,
-        "rationale": "Chronic lower back pain is a significant health issue, and the use of focused ultrasound for pain modulation aligns with the priority mechanism of neuromodulation."
-      }
-    ],
-    "weighted_score": 4.5,
-    "decision": "FUND",
-    "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses focused ultrasound to treat chronic lower back pain, which aligns well with the foundation's mission.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"Chronic lower back pain is a significant health issue, and the use of focused ultrasound for pain modulation aligns with the priority mechanism of neuromodulation.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
+    "decision_rationale": "The weighted score meets the threshold of 3.5, and no individual criterion is below 2.",
+    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier to enhance immunotherapy delivery.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets glioblastoma, a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The weighted score meets the threshold of 3.5, and no individual criterion is below 2.\"\n}",
     "parse_error": null
   },
   {
@@ -161,18 +29,18 @@
       {
         "id": "mission_fit",
         "score": 4,
-        "rationale": "The project uses focused ultrasound as a method to enhance the delivery of mRNA vaccines, which aligns with the mission of treating disease."
+        "rationale": "The project uses focused ultrasound as a delivery mechanism for mRNA vaccines, which aligns with treating disease."
       },
       {
         "id": "strategic_alignment",
         "score": 5,
-        "rationale": "The project targets HER2+ metastatic breast cancer, which is a priority oncology disease, and utilizes a mechanism of immunomodulation."
+        "rationale": "The project targets HER2+ metastatic breast cancer, which is a priority oncology disease."
       }
     ],
     "weighted_score": 4.5,
     "decision": "FUND",
     "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses focused ultrasound as a method to enhance the delivery of mRNA vaccines, which aligns with the mission of treating disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets HER2+ metastatic breast cancer, which is a priority oncology disease, and utilizes a mechanism of immunomodulation.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
+    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses focused ultrasound as a delivery mechanism for mRNA vaccines, which aligns with treating disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets HER2+ metastatic breast cancer, which is a priority oncology disease.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
     "parse_error": null
   }
 ]
