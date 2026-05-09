@@ -56,30 +56,40 @@ st.markdown(
     "Two grant Letters of Intent (LOIs) are given to two LLMs. "
     "Each LLM independently decides **FUND** or **DECLINE**. "
     "Then we check each LLM's decision against the **ground truth** — "
-    "the right answer for that LOI based on FUSF's published criteria. "
-    "*(In a production system the ground truth would be FUSF's actual "
-    "historical decisions on past LOIs.)*"
+    "the right answer for that LOI based on FUSF's published criteria."
 )
 
-st.markdown(
-    "**Decision rule each model uses:** weighted score ≥ 3.5 AND no single "
-    "criterion below 2 → FUND. Otherwise → DECLINE."
-)
+
+# ----- FUSF acceptance criteria -------------------------------------------
 
 st.divider()
+st.subheader("What FUSF actually funds")
+
+st.markdown(
+    """
+- **Mission:** the project must use **non-invasive image-guided focused ultrasound** to treat disease
+- **Priority diseases:**
+    - Neurodegenerative — Alzheimer's, Parkinson's, Huntington's, ALS
+    - Oncology — glioblastoma, DIPG, pancreatic, breast, metastatic cancer (immunotherapy emphasis)
+    - Companion animal applications also qualify
+- **Priority mechanisms:** immunomodulation · neuromodulation · gene therapy · drug delivery · sonodynamic therapy
+- **How LOIs are scored:** each model gives a 1–5 score on **mission fit** and **strategic alignment**
+- **Decision rule:** weighted score ≥ 3.5 **AND** no single score below 2 → **FUND**, otherwise **DECLINE**
+"""
+)
 
 
 # ----- Step 1: pick an LOI -------------------------------------------------
 
+st.divider()
 st.subheader("1. The LOI")
-loi_options = {f"{l['id']} — {l['title'][:70]}…": l for l in lois}
+loi_options = {f"{l['id']} — {l['title']}": l for l in lois}
 choice = st.selectbox("Pick an LOI", list(loi_options.keys()))
 loi = loi_options[choice]
 
 st.markdown(f"**Title:** {loi['title']}")
 st.markdown(f"**PI:** {loi.get('pi', '—')}")
-with st.expander("Read the abstract"):
-    st.write(loi["abstract"])
+st.markdown(f"**Abstract:** {loi['abstract']}")
 
 
 # ----- Step 2: ground truth -----------------------------------------------
@@ -151,16 +161,32 @@ if disagreements:
             st.markdown(
                 "**Why this is the smoking gun.** The LOI explicitly says the "
                 "delivery mechanism is **lipid nanoparticles** — there is no "
-                "focused ultrasound in the project at all. But look at the "
-                "model's `mission_fit` reasoning above: it claims the project "
+                "focused ultrasound in the project at all. But the model's "
+                "`mission_fit` reasoning above claims the project "
                 "*\"uses focused ultrasound as a delivery mechanism.\"* "
                 "**The model hallucinated focused ultrasound into the project** "
-                "to justify the FUND decision. This is exactly the kind of "
+                "to justify its FUND decision. This is exactly the kind of "
                 "failure mode an evaluation harness is built to catch."
             )
 else:
     st.divider()
     st.success("Both models agreed with the ground truth on this LOI.")
+
+
+# ----- Limitations ---------------------------------------------------------
+
+st.divider()
+st.subheader("Limitations of this demo")
+st.markdown(
+    """
+- **Tiny dataset** — only 2 LOIs. Findings are directional, not statistical
+- **One LOI is synthetic** — LOI-008 was deliberately constructed to test a specific failure mode (priority keywords without focused ultrasound)
+- **Ground truth labels are mine** — written from FUSF's published criteria, not pulled from FUSF's actual past decisions. A production system would replay real historical reviews
+- **Stage 1 only** — the full proposal stage adds scientific merit, feasibility, team, and eligibility criteria, which need the actual proposal text
+- **Binary ground truth** — real reviewers disagree with each other; truth is a distribution, not a single label
+- **Two models only** — Llama 3.3 70B and GPT-4o-mini. A real evaluation would compare more, including frontier models like Claude and GPT-4o
+"""
+)
 
 
 # ----- Footer note ---------------------------------------------------------

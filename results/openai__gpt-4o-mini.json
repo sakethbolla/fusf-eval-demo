@@ -7,18 +7,18 @@
       {
         "id": "mission_fit",
         "score": 4,
-        "rationale": "The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier for immunotherapy delivery."
+        "rationale": "The project uses MR-guided focused ultrasound to treat glioblastoma by opening the blood-brain barrier for drug delivery."
       },
       {
         "id": "strategic_alignment",
         "score": 5,
-        "rationale": "The project targets glioblastoma, a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy."
+        "rationale": "The project targets glioblastoma, which is a priority oncology disease, and utilizes a priority mechanism of drug delivery."
       }
     ],
     "weighted_score": 4.5,
     "decision": "FUND",
     "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses non-invasive image-guided focused ultrasound to treat disease by opening the blood-brain barrier for immunotherapy delivery.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets glioblastoma, a priority oncology disease, and employs immunomodulation through anti-PD-1 therapy.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
+    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses MR-guided focused ultrasound to treat glioblastoma by opening the blood-brain barrier for drug delivery.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets glioblastoma, which is a priority oncology disease, and utilizes a priority mechanism of drug delivery.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
     "parse_error": null
   },
   {
@@ -29,18 +29,18 @@
       {
         "id": "mission_fit",
         "score": 4,
-        "rationale": "The project uses focused ultrasound as a delivery mechanism for mRNA vaccines, which aligns with treating disease."
+        "rationale": "The project proposes a drug delivery platform that utilizes focused ultrasound for targeted immunomodulation, indicating a clear use of FUS to treat disease."
       },
       {
         "id": "strategic_alignment",
         "score": 5,
-        "rationale": "The project targets HER2+ metastatic breast cancer, which is a priority oncology disease."
+        "rationale": "The project targets HER2+ breast cancer, which is a priority oncology disease, and involves immunomodulation, aligning strongly with FUSF's strategic priorities."
       }
     ],
     "weighted_score": 4.5,
     "decision": "FUND",
     "decision_rationale": "The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.",
-    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project uses focused ultrasound as a delivery mechanism for mRNA vaccines, which aligns with treating disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets HER2+ metastatic breast cancer, which is a priority oncology disease.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
+    "raw_response": "{\n  \"criterion_scores\": [\n    {\n      \"id\": \"mission_fit\",\n      \"score\": 4,\n      \"rationale\": \"The project proposes a drug delivery platform that utilizes focused ultrasound for targeted immunomodulation, indicating a clear use of FUS to treat disease.\"\n    },\n    {\n      \"id\": \"strategic_alignment\",\n      \"score\": 5,\n      \"rationale\": \"The project targets HER2+ breast cancer, which is a priority oncology disease, and involves immunomodulation, aligning strongly with FUSF's strategic priorities.\"\n    }\n  ],\n  \"weighted_score\": 4.5,\n  \"decision\": \"FUND\",\n  \"decision_rationale\": \"The project meets the funding criteria with a weighted score above 3.5 and no individual criterion below 2.\"\n}",
     "parse_error": null
   }
 ]

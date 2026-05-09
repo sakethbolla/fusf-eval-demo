@@ -1,22 +1,22 @@
 [
   {
     "id": "LOI-001",
-    "title": "MR-Guided Focused Ultrasound Blood-Brain Barrier Opening to Deliver Anti-PD-1 Immunotherapy in Recurrent Glioblastoma",
+    "title": "MR-Guided Focused Ultrasound for Anti-PD-1 Delivery in Glioblastoma",
     "pi": "Dr. Aisha Patel, Johns Hopkins University",
-    "abstract": "Recurrent glioblastoma (GBM) carries a median survival of under nine months despite standard-of-care temozolomide and bevacizumab. Anti-PD-1 immunotherapies have transformed melanoma and lung cancer outcomes but show limited efficacy in GBM, in part because the blood-brain barrier (BBB) restricts antibody penetration. We propose a 12-month preclinical study using MR-guided low-intensity focused ultrasound (FUS) with circulating microbubbles to transiently open the BBB in tumor-bearing GL261 mouse models, paired with intravenous anti-PD-1. Aim 1: characterize FUS parameters that maximize antibody delivery while minimizing parenchymal injury (n=24 mice). Aim 2: measure tumor volume by serial MRI and survival benefit relative to anti-PD-1 alone (n=40 mice). Our team includes a board-certified neuroradiologist, a neuro-oncology PI with three prior R01s, and a focused-ultrasound physicist co-author on the seminal 2018 Lipsman BBB-opening trial. Total budget request: $98,500. Anticipated outputs: a publication in a high-impact journal and IND-enabling data for a Phase 1 trial.",
+    "abstract": "Recurrent glioblastoma has a median survival under nine months. Anti-PD-1 immunotherapy works in other cancers but the blood-brain barrier (BBB) blocks it from reaching brain tumors. We propose using MR-guided focused ultrasound (FUS) with circulating microbubbles to temporarily open the BBB, allowing anti-PD-1 to reach the tumor. 12-month preclinical mouse study. Budget: $99,000.",
     "ground_truth": {
       "decision": "FUND",
-      "rationale": "Clear central use of MR-guided FUS to treat disease; hits glioblastoma (priority oncology), drug delivery + immunomodulation (two priority mechanisms); credible team; budget within preclinical envelope; clear translational path."
+      "rationale": "Uses focused ultrasound centrally to treat a priority disease (glioblastoma), with two priority mechanisms (drug delivery + immunomodulation). Realistic budget and timeline."
     }
   },
   {
     "id": "LOI-008",
-    "title": "Lipid Nanoparticle-Encapsulated mRNA Delivery for HER2+ Breast Cancer Immunotherapy",
+    "title": "Lipid Nanoparticle mRNA Vaccines for HER2+ Breast Cancer",
     "pi": "Dr. Yuki Tanaka, Memorial Sloan Kettering",
-    "abstract": "We propose lipid nanoparticles carrying HER2-targeted mRNA vaccines to prime T-cell responses against HER2+ metastatic breast cancer. Established LNP platform from our lab's COVID vaccine work. Mouse 4T1 model, n=60. $99,000 budget, 12 months. Strong team with vaccine and oncology expertise.",
+    "abstract": "Metastatic HER2+ breast cancer remains lethal despite advances in immunotherapy. We propose a precision drug delivery platform: lipid nanoparticles carrying HER2-targeted mRNA vaccines for targeted immunomodulation of the tumor microenvironment. The mRNA payload also encodes gene therapy elements to enhance T-cell priming. 12-month preclinical mouse study; strong vaccine and oncology team. Budget: $99,000.",
     "ground_truth": {
       "decision": "DECLINE",
-      "rationale": "Hits priority disease (breast cancer + immunotherapy emphasis) but uses no focused ultrasound at all. Tests whether models privilege disease/mechanism keywords over the actual mission core: FUSF only funds projects using non-invasive image-guided focused ultrasound."
+      "rationale": "The disease (breast cancer) and mechanism (immunotherapy) are FUSF priorities, but the project does not use focused ultrasound at all — delivery is via lipid nanoparticles. Fails FUSF's mission core."
     }
   }
 ]
