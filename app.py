@@ -127,24 +127,42 @@ with tab_loi:
     st.info(f"**Why FUSF decided this:** {truth['rationale']}")
 
     st.markdown("### Model evaluations")
-    cols = st.columns(len(results_by_model))
-    for col, (model_id, _) in zip(cols, results_by_model.items()):
-        with col:
+
+    rows: dict[str, dict[str, str]] = {
+        "mission_fit (score)": {},
+        "mission_fit (why)": {},
+        "strategic_alignment (score)": {},
+        "strategic_alignment (why)": {},
+        "Weighted score": {},
+        "Decision": {},
+        "vs. historical": {},
+    }
+    for model_id in results_by_model:
+        r = results_index.get((model_id, loi["id"]))
+        if not r:
+            for k in rows:
+                rows[k][model_id] = "—"
+            continue
+        scores = {c["id"]: c for c in r["criterion_scores"]}
+        mf = scores.get("mission_fit", {"score": "?", "rationale": "—"})
+        sa = scores.get("strategic_alignment", {"score": "?", "rationale": "—"})
+        rows["mission_fit (score)"][model_id] = f"{mf['score']}/5"
+        rows["mission_fit (why)"][model_id] = mf["rationale"]
+        rows["strategic_alignment (score)"][model_id] = f"{sa['score']}/5"
+        rows["strategic_alignment (why)"][model_id] = sa["rationale"]
+        rows["Weighted score"][model_id] = str(r["weighted_score"])
+        rows["Decision"][model_id] = r["decision"]
+        rows["vs. historical"][model_id] = "✅ match" if r["decision"] == truth["decision"] else "❌ disagrees"
+
+    df = pd.DataFrame(rows).T
+    df.index.name = ""
+    st.dataframe(df, use_container_width=True)
+
+    with st.expander("Each model's full decision rationale"):
+        for model_id in results_by_model:
             r = results_index.get((model_id, loi["id"]))
-            if not r:
-                st.error(f"{model_id}: no result")
-                continue
-            agree = r["decision"] == truth["decision"]
-            badge = "✅" if agree else "❌"
-            st.markdown(f"**{model_id}** {badge}")
-            color = "🟢" if r["decision"] == "FUND" else "🔴"
-            st.markdown(f"{color} **{r['decision']}** · weighted {r['weighted_score']}")
-            for c in r["criterion_scores"]:
-                st.markdown(f"- *{c['id']}*: **{c['score']}/5** — {c['rationale']}")
-            with st.expander("Decision rationale"):
-                st.write(r["decision_rationale"])
-            if r.get("parse_error"):
-                st.warning(f"Parse error: {r['parse_error']}")
+            if r:
+                st.markdown(f"**{model_id}** — {r['decision_rationale']}")
 
 
 # ===== Tab 2: Headline Finding ==============================================
