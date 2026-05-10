@@ -107,12 +107,14 @@ st.markdown(
 )
 
 st.info(
-    "**The framework I'd use to check whether the model is good enough — one baseline + four checks:**  \n"
-    "**0.** How often do FUSF's own reviewers agree with each other? *(without this number, every accuracy figure is meaningless)*  \n"
-    "**1.** Does the model agree with the final decision?  \n"
-    "**2.** Does it agree for the *right reasons* — per-criterion, not just yes/no?  \n"
-    "**3.** Is it making things up — hallucinating facts, or writing generic filler?  \n"
-    "**4.** Where does it work and where does it break — by disease area, by clarity, by model confidence?"
+    "**The framework — 4 checks against ground truth.** "
+    "For each LOI, FUSF's published criteria define the right answer. Each LLM "
+    "independently reads the LOI and produces a decision. We then check:  \n"
+    "**1. Decision agreement** — did the LLM reach the same FUND/DECLINE call as the ground truth?  \n"
+    "**2. Per-criterion alignment** — did it score mission fit and strategic alignment the way FUSF's rubric would? A right decision for the wrong reasons is still a problem.  \n"
+    "**3. Rationale faithfulness** — are the facts cited in the LLM's rationale actually present in the LOI, or is it making things up?  \n"
+    "**4. Failure pattern** — where does each LLM break — by disease area, by how clear-cut the LOI is, by the model's own confidence?  \n"
+    "*Note: at full scale this would also include inter-reviewer agreement as a ceiling. This demo uses FUSF's published criteria as a single ground truth, so that baseline doesn't apply here.*"
 )
 
 
@@ -216,18 +218,17 @@ else:
 st.divider()
 st.subheader("5. What this demo can't show — and why that matters")
 st.markdown(
-    "Two LOIs and two models is enough to demonstrate the *mechanics* of checks #1–#3. "
-    "The pieces below need real FUSF data to fill in:"
+    "Two LOIs and two models is enough to demonstrate the *mechanics* of checks 1–3. "
+    "The pieces below need a real LOI corpus to fill in:"
 )
 st.markdown(
-    "- **Baseline (check #0):** pull ~50 historical LOIs reviewed by ≥2 reviewers, "
-    "compute pairwise % agreement and Cohen's κ. That number is the ceiling every "
-    "model accuracy is measured against. *Almost every eval skips this — bringing it up signals you understand the problem.*\n"
-    "- **Hallucination audit (check #3, the proper version):** sample 30–50 model rationales "
-    "and hand-rate each one for (a) facts cited that aren't in the LOI, (b) generic filler that could apply to anything.\n"
-    "- **Slicing (check #4):** break accuracy down by disease area (oncology vs neuro), "
+    "- **Rationale faithfulness audit (check 3, the proper version):** sample 30–50 model rationales "
+    "and hand-rate each one for (a) facts cited that aren't in the LOI, (b) generic filler that could apply to any proposal.\n"
+    "- **Failure-pattern slicing (check 4):** break accuracy down by disease area (oncology vs neuro), "
     "by how clear-cut the LOI is, and by stated model confidence. One overall accuracy "
-    "hides everything that matters for deployment."
+    "hides everything that matters for deployment.\n"
+    "- **Inter-reviewer baseline (out of scope here):** at full scale you'd also want pairwise reviewer "
+    "agreement as a ceiling — but this demo uses FUSF's published criteria as a single ground truth, so that doesn't apply."
 )
 
 

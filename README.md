@@ -40,32 +40,24 @@ python run_evals.py
 streamlit run app.py
 ```
 
-## How "is the LLM good enough?" is measured — one baseline + four checks
+## The framework — 4 checks against ground truth
 
-**0. Baseline — human reviewer agreement.** Score the humans first. If two reviewers
-only agree 70% on the same LOI, then a model agreeing 75% is at human level. Without
-this number, every accuracy figure is meaningless. Almost every eval skips this.
+For each LOI, FUSF's published criteria define the right answer. Each LLM
+independently reads the LOI and produces a decision. We then check:
 
-**1. Did the model agree with the final decision?** Per-LOI FUND/DECLINE match.
-The headline number — but only meaningful relative to (0).
+1. **Decision agreement** — did the LLM reach the same FUND/DECLINE call as the
+   ground truth?
+2. **Per-criterion alignment** — did it score mission fit and strategic
+   alignment the way FUSF's rubric would? A right decision for the wrong
+   reasons is still a problem.
+3. **Rationale faithfulness** — are the facts cited in the LLM's rationale
+   actually present in the LOI, or is it making things up?
+4. **Failure pattern** — where does each LLM break — by disease area, by how
+   clear-cut the LOI is, by the model's own confidence?
 
-**2. Did it agree for the *right reasons*?** Per-criterion scoring (mission fit,
-strategic alignment, scientific merit, feasibility, team) correlated against
-reviewer scores. Catches models that get the final answer right while completely
-misreading the science.
-
-**3. Is it making things up?** Sample 30–50 model rationales. For each, check
-(a) are the cited facts actually in the LOI, and (b) is the reasoning specific
-to *this* proposal or generic filler that could apply to anything? The demo also
-shows a cheap automatic proxy: % of rationale words that appear in the LOI text.
-
-**4. Where does it work, and where does it break?** Slice results by disease
-area, by how clear-cut the LOI is, and by stated model confidence. Tells
-leadership where to trust it and where not to.
-
-**Final deliverable:** not one accuracy score but a deployment recommendation —
-"use it for clear-cut cases, send borderline ones to humans, don't use it on
-disease-area X yet." That's the responsible-AI-deployment piece.
+*Note: at full scale this would also include inter-reviewer agreement as a
+ceiling. This demo uses FUSF's published criteria as a single ground truth, so
+that baseline doesn't apply here.*
 
 ## What this is not
 
