@@ -99,24 +99,6 @@ if not results_by_model:
 
 st.title("FUSF Letter of Intent — AI Evaluation Demo")
 
-st.markdown(
-    "Two grant Letters of Intent (LOIs) are given to two LLMs. "
-    "Each LLM independently decides **FUND** or **DECLINE**. "
-    "Then we check each LLM's decision against the **ground truth** — "
-    "the right answer for that LOI based on FUSF's published criteria."
-)
-
-st.info(
-    "**The framework — 4 checks against ground truth.** "
-    "For each LOI, FUSF's published criteria define the right answer. Each LLM "
-    "independently reads the LOI and produces a decision. We then check:  \n"
-    "**1. Decision agreement** — did the LLM reach the same FUND/DECLINE call as the ground truth?  \n"
-    "**2. Per-criterion alignment** — did it score mission fit and strategic alignment the way FUSF's rubric would? A right decision for the wrong reasons is still a problem.  \n"
-    "**3. Rationale faithfulness** — are the facts cited in the LLM's rationale actually present in the LOI, or is it making things up?  \n"
-    "**4. Failure pattern** — where does each LLM break — by disease area, by how clear-cut the LOI is, by the model's own confidence?  \n"
-    "*Note: at full scale this would also include inter-reviewer agreement as a ceiling. This demo uses FUSF's published criteria as a single ground truth, so that baseline doesn't apply here.*"
-)
-
 
 # ----- FUSF acceptance criteria -------------------------------------------
 
@@ -165,8 +147,8 @@ st.markdown(f"*Why:* {truth['rationale']}")
 st.divider()
 st.subheader("3. What each LLM said")
 st.caption(
-    "The **Decision** row answers framework check **#1** (final-decision match). "
-    "The **per-criterion score** rows answer check **#2** — a model can pick the right "
+    "The **Decision** row shows the final FUND/DECLINE call. "
+    "The **per-criterion score** rows show *why* — a model can pick the right "
     "FUND/DECLINE while completely misreading the science. Per-criterion scoring catches that."
 )
 
@@ -189,7 +171,7 @@ disagreements = [
 if disagreements:
     st.divider()
     st.subheader("4. Where it went wrong")
-    st.caption("Framework check **#3** — is the model making things up?")
+    st.caption("Is the model making things up?")
     for model_id, r in disagreements:
         st.error(
             f"**{model_id}** said **{r['decision']}**, but the ground truth is "
