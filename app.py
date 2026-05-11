@@ -103,7 +103,7 @@ st.title("FUSF Letter of Intent — AI Evaluation Demo")
 # ----- FUSF acceptance criteria -------------------------------------------
 
 st.divider()
-st.subheader("What FUSF actually funds")
+st.subheader("FUSF Funding criteria")
 
 st.markdown(
     """
