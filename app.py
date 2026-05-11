@@ -136,7 +136,7 @@ st.markdown(f"**Abstract:** {loi['abstract']}")
 
 truth = loi["ground_truth"]
 st.divider()
-st.subheader("2. Ground truth — the right answer")
+st.subheader("2. Ground truth humans answer")
 color = "🟢" if truth["decision"] == "FUND" else "🔴"
 st.markdown(f"### {color} {truth['decision']}")
 st.markdown(f"*Why:* {truth['rationale']}")
