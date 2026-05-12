@@ -210,7 +210,7 @@ st.success(
 # ----- Step 6: try it on any paper ----------------------------------------
 
 st.divider()
-st.subheader("5. Try it on any paper or abstract")
+st.subheader("Try it on any paper or abstract")
 st.caption(
     "Upload a PDF or paste an abstract. Both models will score it live. "
     "There's no ground truth column here — we don't know the right answer "
