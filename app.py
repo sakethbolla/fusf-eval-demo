@@ -195,26 +195,7 @@ else:
     st.success("Both models agreed with the ground truth on this LOI.")
 
 
-# ----- Step 5: what this demo can't show ----------------------------------
-
-st.divider()
-st.subheader("5. What this demo can't show — and why that matters")
-st.markdown(
-    "Two LOIs and two models is enough to demonstrate the *mechanics* of checks 1–3. "
-    "The pieces below need a real LOI corpus to fill in:"
-)
-st.markdown(
-    "- **Rationale faithfulness audit (check 3, the proper version):** sample 30–50 model rationales "
-    "and hand-rate each one for (a) facts cited that aren't in the LOI, (b) generic filler that could apply to any proposal.\n"
-    "- **Failure-pattern slicing (check 4):** break accuracy down by disease area (oncology vs neuro), "
-    "by how clear-cut the LOI is, and by stated model confidence. One overall accuracy "
-    "hides everything that matters for deployment.\n"
-    "- **Inter-reviewer baseline (out of scope here):** at full scale you'd also want pairwise reviewer "
-    "agreement as a ceiling — but this demo uses FUSF's published criteria as a single ground truth, so that doesn't apply."
-)
-
-
-# ----- Step 6: the deliverable --------------------------------------------
+# ----- Step 5: the deliverable --------------------------------------------
 
 st.divider()
 st.subheader("What I'd hand FUSF at the end")
@@ -226,10 +207,10 @@ st.success(
 )
 
 
-# ----- Step 7: try it on any paper ----------------------------------------
+# ----- Step 6: try it on any paper ----------------------------------------
 
 st.divider()
-st.subheader("6. Try it on any paper or abstract")
+st.subheader("5. Try it on any paper or abstract")
 st.caption(
     "Upload a PDF or paste an abstract. Both models will score it live. "
     "There's no ground truth column here — we don't know the right answer "
